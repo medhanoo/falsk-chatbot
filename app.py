@@ -10,6 +10,10 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route("/dashboard")
+def dashboard():
+    return render_template("Majestic Admin.html")
+
 @app.route("/chatsetup")
 def chatsetup():
     custname = request.args.get('custname')

@@ -15,6 +15,11 @@
       <script>
         function getBotResponse() {
           var rawText = $("#textInput").val();
+          if (rawText.includes("dashboard")){
+			  window.open("dashboard");
+			  $("#textInput").val("");
+			  }
+		   else { 
           var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
           $("#textInput").val("");
           $("#chatbox").append(userHtml);
@@ -24,7 +29,7 @@
             $("#chatbox").append(botHtml);
             document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
           });
-        }
+        } }
         $("#textInput").keypress(function(e) {
             if(e.which == 13) {
                 getBotResponse();
